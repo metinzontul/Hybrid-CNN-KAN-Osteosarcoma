@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Dataset](https://img.shields.io/badge/Dataset-BTXRD-blue)](https://doi.org/10.6084/m9.figshare.27865398)
 
-This repository contains the official PyTorch implementation of the paper: **"Exploratory Evaluation of a Hybrid EfficientNetV2-S and Kolmogorov-Arnold Network for Osteosarcoma-versus-Rest Classification in Radiographs"** (published in *MDPI Diagnostics*).
+This repository contains the official PyTorch implementation of the paper: **"Exploratory Evaluation of a Hybrid EfficientNetV2-S and Kolmogorov-Arnold Network for Osteosarcoma-versus-Rest Classification in Radiographs"** (submitted to MDPI Diagnostics).
 
 **Authors:** Uğur Özdemir, Metin Zontul, Seda Karateke, Mehmet Akif Cifci, Aykut Başer
 
@@ -18,19 +18,18 @@ By integrating an ImageNet-pretrained **EfficientNetV2-S** backbone with a const
 
 ```text
 OsteoKAN/
-├── dataset/                  # Directory for the BTXRD dataset (Not included in repo)
-├── src/                      # Source code
-│   ├── model.py              # Hybrid CNN-KAN architecture definition
-│   ├── data_loader.py        # Dataloaders, augmentation, and WeightedRandomSampler
-│   ├── train.py              # Training loop with Focal Loss and validation checkpointing
-│   └── test_hybrid_kan.py    # Independent test evaluation and Confusion Matrix generation
-├── notebooks/                # Jupyter Notebooks for visualization
-│   └── xai_gradcam.ipynb     # Exploratory Grad-CAM saliency maps (Figures 4, 5, 6)
-├── saved_models/             # Directory for saving best .pth weights
-├── logs/                     # Directory for saving outputs (e.g., confusion_matrix.png)
-├── .gitignore                # Ignored files to prevent data/weight leaks
-├── requirements.txt          # Python dependencies
-└── README.md                 # Project documentation
+├── dataset/                                 # Directory for the BTXRD dataset (Not included in repo)
+├── src/                                     # Source code
+│   ├── model.py                             # Hybrid CNN-KAN architecture definition
+│   ├── data_loader.py                       # Dataloaders, augmentation, and WeightedRandomSampler
+│   ├── train.py                             # Training loop with Focal Loss and validation checkpointing
+│   └── test_hybrid_kan.py                   # Independent test evaluation and Confusion Matrix generation
+│   └── explain_ai_comparative_grad_cam.py   # Exploratory Grad-CAM saliency maps (Figures 4, 5, 6)
+├── saved_models/                            # Directory for saving best .pth weights
+├── logs/                                    # Directory for saving outputs (e.g., confusion_matrix.png)
+├── .gitignore                               # Ignored files to prevent data/weight leaks
+├── requirements.txt                         # Python dependencies
+└── README.md                                # Project documentation
 ```
 
 ## ⚙️ Installation
@@ -100,16 +99,3 @@ The hybrid configuration was evaluated across three random training seeds (42, 1
 | **Sensitivity** | 0.7652 ± 0.0283 | Detection of osteosarcoma-positive images |
 | **F1-Score** | 0.8312 ± 0.0262 | Balance between precision and sensitivity |
 
-## 📝 Citation
-If you find this code or research helpful in your work, please cite our paper:
-
-```bibtex
-@article{ozdemir2026exploratory,
-  title={Exploratory Evaluation of a Hybrid EfficientNetV2-S and Kolmogorov-Arnold Network for Osteosarcoma-versus-Rest Classification in Radiographs},
-  author={Özdemir, Uğur and Zontul, Metin and Karateke, Seda and Cifci, Mehmet Akif and Başer, Aykut},
-  journal={Diagnostics},
-  year={2026},
-  publisher={MDPI}
-}
-```
-*(Update volume/issue/pages once assigned by MDPI).*
